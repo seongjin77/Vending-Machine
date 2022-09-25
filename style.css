@@ -20,7 +20,7 @@ body {
 
 /* 메인부분 */
 main {
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -56,9 +56,9 @@ main {
     cursor: pointer;
 }
 
-.item-list li:hover{
-    border: 3px solid #6327FE
-}
+/* .item-list li:hover {
+    border: 3px solid #6327fe;
+} */
 
 .item-list li img {
     width: 36px;
@@ -72,9 +72,7 @@ main {
 }
 
 .item-list .cola-price {
-    width: 70px;
-    /* height: 22px; */
-    /* 높이를 따로 안주고 line-height로 수직정렬 */
+    width: 70px; 
     background-color: #6327fe;
     color: white;
     font-weight: 500;
@@ -82,6 +80,20 @@ main {
     line-height: 22px;
     border-radius: 50px;
 }
+
+/* sddddddddddddddddd */
+.cola-btn{
+    width: 70px;
+    height: 22px;
+    /* vertical-align: top; */
+    border-radius: 50px;
+    background-color: #6327fe;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+
 
 .calculate {
     display: grid;
@@ -134,17 +146,36 @@ main {
     border: none;
     padding: 12px;
 
-    overflow: hidden;
+    overflow-y: scroll;
 
     /* height:106px; */
     /* width: 200px; */
 }
+/**********스크롤 ********************/
+.scroll::-webkit-scrollbar { 
+    width: 5px; /*스크롤바의 너비*/
+    height: 5px;
+ } 
+    
+    .scroll::-webkit-scrollbar-thumb { 
+    background-color: white; /*스크롤바의 색상*/ 
+    border-radius: 10px; /*스크롤바 라운드*/
+   
+} 
 
-.pocket-list{
+    .scroll::-webkit-scrollbar-track { 
+    border-radius: 5px; /*스크롤바 트랙 라운드*/ 
+   }
+    
+/***********  *********/
 
-    display:flex;
+
+.pocket-list {
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    /* overflow: hidden; */
 }
 
 .pocket-list li {
@@ -175,48 +206,132 @@ main {
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-   
 }
 
-.get-btn{
-font-weight: 700;
-font-size: 13px;
-color: #fff;
-background: #6327FE;
-border:none;
-border-radius: 5px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+.get-btn {
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+    background: #6327fe;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 /* 가상요소 사용여부 고려해볼 것. */
 /* 왼쪽 밑 그리드 부분 사용여부 고려해볼 것. */
 /* 버튼 대신 라벨 사용여부 고려 */
 /*************** right section *******************/
 
-
-.section-right{
+.section-right {
     width: 360px;
     height: 545px;
-    background-color: dodgerblue;
 }
 
-.present-money{
+.present-money {
     width: 100%;
     height: 50px;
     background-color: #fff;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    margin-bottom: 20px;
 }
 
-.present-money p{
+.present-money p {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 306px;
     height: 32px;
-    background-color: #EAE8FE;
+    padding: 6px 10px;
+    background-color: #eae8fe;
     border-radius: 5px;
 }
 
+.present-money-txt {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.overscroll-wrapper{
+    width: 100%;
+    height: 371px;
+    margin-bottom: 27px;
+    background-color: #eae8fe;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.151);
+}
+.purchaselist-box {
+    /* width: 100%;
+    height: 474px; */
+    background-color: white;
+    padding: 25px 27px;
+    text-align: center;
+}
+
+.purchaselist-box h3 {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 13px;
+}
+
+.purchaselist {
+    height: 150px;
+    /* width: 306px;
+    height: 364px; */
+    padding: 12px;
+    /* background-color: #eae8fe;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.151); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.purchaselist li {
+    display: flex;
+    background-color: white;
+    width: 276px;
+    height: 46px;
+    padding: 8px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 9px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+}
+
+.purchaselist li img {
+    width: 18px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.target::before{
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(./img/Sold-out.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    
+    background-position: 9px 27px;
+    position: absolute;
+    z-index: 10;
+}
+.target::after{
+    display: block;
+    content: "";
+    background-color:black;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
