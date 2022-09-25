@@ -1,7 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap");
+
+:root {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+}
 body {
     background-color: #eae8fe;
+    height: 963px;
 }
 
-.header-bg{
-    
+/* 헤더 부분 */
+.header-bg {
+    background-image: url(./img/Group.png);
+    width: 386px;
+    height: 180px;
+    margin: 0 auto;
+    margin-bottom: 67px;
 }
+
+/* 메인부분 */
+main {
+    display:flex;
+    justify-content: center;
+}
+
+/* left */
+
+.section-left {
+    background-color: #fff;
+    width: 360px;
+    height: 545px;
+    padding: 31px 27px;
+}
+
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 306px;
+    height: 272px;
+    margin-bottom: 20px;
+    /* overflow: scroll; */
+    /* background-color: dodgerblue; */
+}
+
+.item-list li {
+    width: 94px;
+    height: 130px;
+    /* background-color: lightcoral; */
+    padding: 11px;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+    cursor: pointer;
+}
+
+.item-list li:hover{
+    border: 3px solid #6327FE
+}
+
+.item-list li img {
+    width: 36px;
+}
+
+.item-list .cola-name {
+    white-space: normal;
+    font-size: 9px;
+    margin-top: 6px;
+    margin-bottom: 7px;
+}
+
+.item-list .cola-price {
+    width: 70px;
+    /* height: 22px; */
+    /* 높이를 따로 안주고 line-height로 수직정렬 */
+    background-color: #6327fe;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 50px;
+}
+
+.calculate {
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: 200px 94px;
+    grid-template-rows: 33px 33px 106px;
+    column-gap: 12px;
+    row-gap: 11px;
+    /* background-color: lightcoral; */
+}
+
+.remain-money {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eae8fe;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 6px 10px 7px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.remain-btn {
+    font-size: 13px;
+    line-height: 18px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+#deposit-money {
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    font-family: inherit;
+    padding: 6px;
+}
+.deposit-btn {
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    cursor: pointer;
+}
+
+.pocket {
+    background-color: #eae8fe;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 12px;
+
+    overflow: hidden;
+
+    /* height:106px; */
+    /* width: 200px; */
+}
+
+.pocket-list{
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pocket-list li {
+    width: 170px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #fff;
+    font-size: 9px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+}
+
+.pocket-list li img {
+    width: 18px;
+    margin-right: 10px;
+}
+
+.pocket-list-name {
+    margin-right: auto;
+}
+.pocket-list-number {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.get-btn{
+font-weight: 700;
+font-size: 13px;
+color: #fff;
+background: #6327FE;
+border:none;
+border-radius: 5px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+/* 가상요소 사용여부 고려해볼 것. */
+/* 왼쪽 밑 그리드 부분 사용여부 고려해볼 것. */
+/* 버튼 대신 라벨 사용여부 고려 */
+/*************** right section *******************/
+
+
+.section-right{
+    width: 360px;
+    height: 545px;
+    background-color: dodgerblue;
+}
+
+.present-money{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.present-money p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 306px;
+    height: 32px;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+}
+
