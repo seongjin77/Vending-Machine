@@ -31,6 +31,7 @@ main {
     width: 360px;
     height: 545px;
     padding: 31px 27px;
+    margin-right: 28px;
 }
 
 .item-list {
@@ -54,6 +55,8 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.5);
     text-align: center;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 /* .item-list li:hover {
@@ -71,7 +74,7 @@ main {
     margin-bottom: 7px;
 }
 
-.item-list .cola-price {
+/* .item-list .cola-price {
     width: 70px; 
     background-color: #6327fe;
     color: white;
@@ -79,10 +82,10 @@ main {
     font-size: 12px;
     line-height: 22px;
     border-radius: 50px;
-}
+} */
 
 /* sddddddddddddddddd */
-.cola-btn{
+.cola-btn {
     width: 70px;
     height: 22px;
     /* vertical-align: top; */
@@ -91,9 +94,9 @@ main {
     color: white;
     font-size: 12px;
     text-align: center;
+    font-family: none;
+    /* padding-bottom: 2px; */
 }
-
-
 
 .calculate {
     display: grid;
@@ -152,26 +155,23 @@ main {
     /* width: 200px; */
 }
 /**********스크롤 ********************/
-.scroll::-webkit-scrollbar { 
+.scroll::-webkit-scrollbar {
     width: 5px; /*스크롤바의 너비*/
     height: 5px;
- } 
-    
-    .scroll::-webkit-scrollbar-thumb { 
-    background-color: white; /*스크롤바의 색상*/ 
-    border-radius: 10px; /*스크롤바 라운드*/
-   
-} 
+}
 
-    .scroll::-webkit-scrollbar-track { 
-    border-radius: 5px; /*스크롤바 트랙 라운드*/ 
-   }
-    
+.scroll::-webkit-scrollbar-thumb {
+    background-color: white; /*스크롤바의 색상*/
+    border-radius: 10px; /*스크롤바 라운드*/
+}
+
+.scroll::-webkit-scrollbar-track {
+    border-radius: 5px; /*스크롤바 트랙 라운드*/
+}
+
 /***********  *********/
 
-
 .pocket-list {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,6 +216,7 @@ main {
     border: none;
     border-radius: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 /* 가상요소 사용여부 고려해볼 것. */
 /* 왼쪽 밑 그리드 부분 사용여부 고려해볼 것. */
@@ -254,17 +255,17 @@ main {
     font-size: 14px;
 }
 
-.overscroll-wrapper{
+/* .overscroll-wrapper{
     width: 100%;
     height: 371px;
     margin-bottom: 27px;
     background-color: #eae8fe;
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.151);
-}
+} */
 .purchaselist-box {
-    /* width: 100%;
-    height: 474px; */
+    width: 100%;
+    height: 475px;
     background-color: white;
     padding: 25px 27px;
     text-align: center;
@@ -274,16 +275,17 @@ main {
     font-weight: 700;
     font-size: 14px;
     margin-bottom: 13px;
+    line-height: 20px;
 }
 
 .purchaselist {
-    height: 150px;
-    /* width: 306px;
-    height: 364px; */
+    
+    width: 306px;
+    height: 364px;
     padding: 12px;
-    /* background-color: #eae8fe;
+    background-color: #eae8fe;
     border-radius: 5px;
-    border: 2px solid rgba(0, 0, 0, 0.151); */
+    border: 1px solid rgba(0, 0, 0, 0.151);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -310,7 +312,7 @@ main {
     object-fit: contain;
 }
 
-.target::before{
+/* .target::before{
     display: block;
     width: 100%;
     height: 100%;
@@ -322,16 +324,37 @@ main {
     background-position: 9px 27px;
     position: absolute;
     z-index: 10;
-}
-.target::after{
-    display: block;
-    content: "";
-    background-color:black;
-    border-radius: 5px;
+} */
+.target::after {
+    /* display: block; */
+    content: "품절";
+    color: transparent;
+    background-color: rgba(0, 0, 0, 0.596);
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
     left: 0;
-    opacity: 0.5;
+    top: 0;
+
+    background: rgba(0, 0, 0, 0.596) url(./img/Sold-out.png) 50% 50% / 70%
+        no-repeat;
+
+    /* content: "품절";
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(../img/Sold-out.png);
+    background-position: center;
+    background-size: 57.51px 44.85px;
+    background-repeat: no-repeat; */
+}
+
+.sum{
+    margin-top: 6px;
+    display: block;
+    margin-left:auto;
+    text-align: right;
+    font-weight: 500;
+    font-size: 12px;
 }
